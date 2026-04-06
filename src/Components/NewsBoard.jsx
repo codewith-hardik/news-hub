@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 import { Container, Typography, CircularProgress, Box, Chip } from '@mui/material';
 import NewsItem from './NewsItem'
 import WhatshotIcon from '@mui/icons-material/Whatshot';
@@ -11,7 +12,8 @@ const NewsBoard = ({ category }) => {
     const fetchNews = async () => {
       setLoading(true)
       try {
-        fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`)
+        // NewsAPI.org blocks free accounts on deployed sites (HTTP 426). This free proxy allows it to work on Vercel.
+        fetch(`https://saurav.tech/NewsAPI/top-headlines/category/${category}/us.json`)
           .then(res => res.json())
           .then(data => {
             if (data.articles) {
