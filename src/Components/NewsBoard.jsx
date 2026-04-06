@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { useState, useEffect } from 'react';
 import { Container, Typography, CircularProgress, Box, Chip } from '@mui/material';
 import NewsItem from './NewsItem'
 import WhatshotIcon from '@mui/icons-material/Whatshot';
